@@ -273,7 +273,7 @@ INSERT INTO heroi (nome, versao, habilidade, altura) VALUES
 SELECT * FROM heroi;
 
 -- Adicione um campo de regeneração, onde ele aceitará apenas os valores booleanos de TRUE ou FALSE.
-ALTER TABLE heroi ADD COLUMN regeneracao BOOLEAN;
+ALTER TABLE heroi ADD COLUMN regeneracao TINYINT CONSTRAINT chkRegeneracao CHECK(regeneracao IN (0, 1));
 
 -- Modifique o campo versão para aceitar até 100 caracteres.
 ALTER TABLE heroi MODIFY COLUMN versao VARCHAR(100);
